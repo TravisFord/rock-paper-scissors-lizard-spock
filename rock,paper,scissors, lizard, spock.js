@@ -1,0 +1,121 @@
+var userChoice = prompt("Do you choose rock, paper, scissors, lizard, or spock?");
+var computerChoice = Math.random();
+
+
+
+
+if (computerChoice < 0.20) {
+	computerChoice = "rock";
+} else if(computerChoice < 0.40) {
+	computerChoice = "paper";
+}
+  else if (computerChoice < 0.60) {
+	  computerChoice = "scissors";
+  }
+  else if (computerChoice < 0.80) {
+	  computerChoice = "lizard";
+  }
+
+ else {
+	computerChoice = "spock";  
+}
+ document.write ("You have chosen "+userChoice +"<br />") 
+ document.write("The Computer has chosen: " + computerChoice);
+ 
+ 
+ var compare = function (choice1, choice2){
+	if (choice1 == choice2){
+		return("<br /> The result is a draw.");
+	}
+	
+	if (choice1 == "rock") {
+		if (choice2 == "paper") {
+			return ("<br /> Paper covers rock. You loose!");
+	}
+		else if (choice2 == "scissors") {
+			return ("<br /> Rock crushes scissors. You win!");
+		}
+		else if (choice2 == "lizard"){
+			return ("<br /> Rock crushes lizard. You win!");
+		}
+		else {
+			return ("<br /> Spock vaporizes rock. You loose!")
+		}
+	
+	}
+	
+	else if (choice1 == "paper") {
+		if (choice2 == "rock") {
+			return ("<br /> Paper covers rock. You win!");
+		}
+		else if ( choice2 == "scissors") {
+			return ("<br /> Scissors cuts paper. You loose!");
+		}
+		else if (choice2 == "lizard") {
+			return ("<br /> Lizard eats paper. You loose!");
+		}
+		
+		else {
+			return ("<br /> Paper disproves spock. You win!");
+		}
+	}
+	
+	
+	else if (choice1 == "scissors") {
+		if (choice2 == "rock") {
+			return ("<br /> Rock crushes scissors. You loose!");
+		}
+		
+		else if (choice2 == "paper") {
+			return ("<br /> Scissors cuts paper. You win!");
+		}
+		else if (choice2 == "lizard") {
+			return ("<br /> Scissors decapitates lizard. You win!");
+		}
+		
+		else {
+			return ("<br /> Spock smashes scissors. You loose!");
+		}
+	
+	}
+	
+	else if (choice1 == "lizard") {
+		if (choice2 == "rock") {
+			return ("<br /> Rock crushes lizard. You loose!");
+		}	
+		else if (choice2 == "paper") {
+			return ("<br /> Lizard eats paper. You win");
+		
+		}
+		
+		else if (choice2 == "scissors") {
+			return ("<br /> Scissors decapitates lizard. You loose!");
+		}
+		else {
+			return ("<br /> Lizard poisons spock. You win!");
+		}
+	}	
+	else if (choice1 == "spock") {
+		if (choice2 == "rock") {
+			return ("<br /> Spock vaporizes rock. You win!");
+		}
+		else if (choice2 == "paper") {
+			return ("<br /> Paper disproves spock. You loose!");
+		}
+		else if (choice2 == "scissors") {
+			return ("<br /> Spock smashes scissors. You win!");
+		}
+		else {
+			return ("<br /> Lizard poisons spock. You loose!");
+		}
+		
+	}
+		
+		else {
+			return ("<br /> Not a selection. Please check your spelling.");
+		}
+	
+	
+ };
+
+ document.write (compare (userChoice, computerChoice));
